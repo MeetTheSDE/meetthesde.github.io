@@ -79,7 +79,7 @@ export default function ContactSection() {
             icon: Linkedin,
             label: "LinkedIn",
             value: "Connect with me",
-            link: "https://www.linkedin.com/in/meet1809/",
+            link: "https://www.linkedin.com/in/sde-meet/",
         },
     ];
 
@@ -121,7 +121,7 @@ export default function ContactSection() {
                                     <a
                                         key={info.label}
                                         href={info.link}
-                                        className="block p-2 rounded-2xl transition-colors hover:bg-background"
+                                        className="block p-2 rounded-2xl transition-colors hover:bg-[hsl(var(--card-hover))]"
                                         {...(info.label === "LinkedIn" && {
                                             target: "_blank",
                                             rel: "noopener noreferrer",
@@ -132,7 +132,7 @@ export default function ContactSection() {
                                 ) : (
                                     <div
                                         key={info.label}
-                                        className="block p-2 rounded-2xl transition-colors hover:bg-background"
+                                        className="block p-2 rounded-2xl transition-colors hover:bg-[hsl(var(--card-hover))]"
                                     >
                                         {content}
                                     </div>

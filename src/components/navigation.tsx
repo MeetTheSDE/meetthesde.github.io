@@ -1,12 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import { Menu, X, Sun, Moon, ArrowUp } from "lucide-react";
+import { Menu, X, ArrowUp } from "lucide-react";
 
 export default function Navigation() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-    const [darkMode, setDarkMode] = useState(() => {
-        const savedMode = localStorage.getItem("darkMode");
-        return savedMode === "true" ? true : false;
-    });
     const [activeSection, setActiveSection] = useState<string | null>(null);
     const [showScrollToTop, setShowScrollToTop] = useState(false);
     const navLinksRef = useRef<HTMLDivElement>(null);
@@ -17,13 +13,8 @@ export default function Navigation() {
     }, []);
 
     useEffect(() => {
-        if (darkMode) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-        localStorage.setItem("darkMode", String(darkMode));
-    }, [darkMode]);
+        document.documentElement.classList.remove("dark");
+    }, []);
 
     useEffect(() => {
         if (isScrollingToSection) {
@@ -111,10 +102,6 @@ export default function Navigation() {
         setActiveSection("#hero");
     };
 
-    const toggleDarkMode = () => {
-        setDarkMode((prevMode) => !prevMode);
-    };
-
     const navLinks = [
         { href: "#hero", label: "Home" },
         { href: "#summary", label: "Summary" },
@@ -190,17 +177,6 @@ export default function Navigation() {
                                     {link.label}
                                 </button>
                             ))}
-                            <button
-                                onClick={toggleDarkMode}
-                                className="text-muted-foreground hover:text-primary transition-colors ml-4 dark:text-muted-foreground/80 dark:hover:text-primary"
-                                aria-label="Toggle dark mode"
-                            >
-                                {darkMode ? (
-                                    <Sun className="h-6 w-6" />
-                                ) : (
-                                    <Moon className="h-6 w-6" />
-                                )}
-                            </button>
                         </div>
 
                         <div className="md:hidden flex items-center space-x-4">
@@ -214,17 +190,6 @@ export default function Navigation() {
                                     <X className="h-6 w-6" />
                                 ) : (
                                     <Menu className="h-6 w-6" />
-                                )}
-                            </button>
-                            <button
-                                onClick={toggleDarkMode}
-                                className="text-muted-foreground hover:text-primary transition-colors dark:text-muted-foreground/80 dark:hover:text-primary"
-                                aria-label="Toggle dark mode"
-                            >
-                                {darkMode ? (
-                                    <Sun className="h-6 w-6" />
-                                ) : (
-                                    <Moon className="h-6 w-6" />
                                 )}
                             </button>
                         </div>
