@@ -6,6 +6,20 @@ import { SectionStyle } from "./custom-ui/custom-section";
 export default function ProjectsSection() {
     const projects = [
         {
+            title: "Dynamic Menu Management System",
+            description:
+                "Built and deployed a React + TypeScript café menu app with live Google Sheets integration, so non-technical staff can update menu items and pricing without touching code. Deployed on Vercel.",
+            technologies: [
+                "React",
+                "TypeScript",
+                "Google Sheets API v4",
+                "Figma",
+                "Vercel",
+            ],
+            github: "https://github.com/MeetTheSDE/joblense",
+            liveDemo: "https://sailors-den.vercel.app/",
+        },
+        {
             title: "JobLense: Keywords Highlighter",
             description:
                 "Chrome extension to highlight custom keywords on LinkedIn Jobs using JavaScript and DOM parsing. Supports real-time updates, multiple keyword sets, and performance-optimized highlighting. Designed the extension’s logo and branding assets.",
