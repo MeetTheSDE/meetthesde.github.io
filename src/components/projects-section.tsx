@@ -16,7 +16,7 @@ export default function ProjectsSection() {
                 "Figma",
                 "Vercel",
             ],
-            github: "https://github.com/MeetTheSDE/joblense",
+            github: "https://github.com/MeetTheSDE/sailors-den",
             liveDemo: "https://sailors-den.vercel.app/",
         },
         {
